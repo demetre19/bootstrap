@@ -1,0 +1,9 @@
+{
+  "tinyfish": {
+    "type": "http",
+    "url": "https://agent.tinyfish.ai/mcp",
+    "headers": {
+      "Authorization": "!tinyfish-api-header"
+    }
+  }
+}

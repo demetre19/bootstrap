@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+"""Print the TinyFish bearer header for MCP auth.
+
+Reads the API key from $TINYFISH_API_KEY, or from
+~/.config/tinyfish/api-key (single line, mode 600 recommended).
+
+Used by agent MCP configs as a command header, e.g. OMP:
+  {"type":"http","url":"https://agent.tinyfish.ai/mcp",
+   "headers":{"Authorization":"!/path/to/tinyfish-api-header"}}
+"""
+import os
+import sys
+from pathlib import Path
+
+key = os.environ.get("TINYFISH_API_KEY", "").strip()
+if not key:
+    p = Path.home() / ".config" / "tinyfish" / "api-key"
+    if p.is_file():
+        key = p.read_text("utf-8").splitlines()[0].strip()
+if not key.startswith("sk-"):
+    sys.exit(
+        "TinyFish API key missing. Set TINYFISH_API_KEY or write the key to "
+        "~/.config/tinyfish/api-key (get one from the TinyFish dashboard)."
+    )
+print(f"Bearer {key}", end="")

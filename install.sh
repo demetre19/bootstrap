@@ -109,6 +109,7 @@ install_skills "$PROFILE" \
   "user|autoimprove|local|.|" \
   "user|website-copy|local|.|" \
   "user|dox|local|.|" \
+  "user|tinyfish|local|.|" \
   "user|security-scan|openai/plugins|plugins/codex-security/skills/security-scan|$OP" \
   "user|security-diff-scan|openai/plugins|plugins/codex-security/skills/security-diff-scan|$OP" \
   "user|deep-security-scan|openai/plugins|plugins/codex-security/skills/deep-security-scan|$OP" \
@@ -148,6 +149,28 @@ install_skills "$PROFILE" \
   "technical|no-mistakes|kunchenguid/no-mistakes|skills/no-mistakes|$NM" \
   "technical|dataforseo|local|.|" \
   "technical|last30days|mvanhorn/last30days-skill|skills/last30days|$L3"
+# --- TinyFish MCP (both profiles) ----------------------------------------
+# Installs the auth helper to ~/.local/bin (PATH-standard) so MCP configs can
+# reference `!tinyfish-api-header` instead of embedding the API key.
+# Registering the server itself is left to the user/agent — MCP config format
+# differs per harness; skills/tinyfish/SKILL.md + mcp/tinyfish/mcp-snippet.json
+# carry the exact snippet.
+BIN_DIR="${BIN_DIR:-$HOME/.local/bin}"
+if [ -w "$BIN_DIR" ] || mkdir -p "$BIN_DIR" 2>/dev/null; then
+  cp mcp/tinyfish/tinyfish-api-header "$BIN_DIR/tinyfish-api-header"
+  chmod +x "$BIN_DIR/tinyfish-api-header"
+  echo
+  echo "TinyFish MCP: helper installed to $BIN_DIR/tinyfish-api-header"
+  if [ -n "${TINYFISH_API_KEY:-}" ] || [ -f "$HOME/.config/tinyfish/api-key" ]; then
+    echo "  API key found — add the server to your agent's MCP config:"
+    echo "    {\"type\":\"http\",\"url\":\"https://agent.tinyfish.ai/mcp\",\"headers\":{\"Authorization\":\"!tinyfish-api-header\"}}"
+  else
+    echo "  No API key yet. Set TINYFISH_API_KEY or write it to ~/.config/tinyfish/api-key,"
+    echo "  then add the server snippet from mcp/tinyfish/mcp-snippet.json to your MCP config."
+  fi
+else
+  echo "  ! could not write $BIN_DIR — copy mcp/tinyfish/tinyfish-api-header somewhere on PATH"
+fi
 
 echo
 echo "Done. Restart your agent session to pick up new skills."

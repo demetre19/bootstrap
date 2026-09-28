@@ -14,7 +14,7 @@ cd bootstrap
 
 ## Profiles
 
-### `user` — everyday coding partner (34 skills)
+### `user` — everyday coding partner (35 skills)
 
 The general-purpose set. Debugging, security review, UI/UX quality gates,
 and ruthless-scope discipline. No vendor credentials required.
@@ -26,8 +26,9 @@ and ruthless-scope discipline. No vendor credentials required.
 | **Ponytail** (scope discipline) | `ponytail`, `ponytail-review`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help` |
 | **UI/UX** | `impeccable`, `ux-auditor`, `ux-intent-discovery`, `ux-purpose-audit`, `design-system`, `design-direction-questionnaire`, `information-hierarchy`, `form-ux`, `feedback-and-affordance`, `state-completeness`, `micro-interactions`, `visual-character`, `website-copy` |
 | **Workflow** | `autoimprove`, `dox` (self-documenting AGENTS.md framework — copy `AGENTS.dox.md` into a project root as `AGENTS.md`) |
+| **MCP** | `tinyfish` — installs `tinyfish-api-header` to `~/.local/bin` + the skill with the MCP config snippet; needs a TinyFish API key (`TINYFISH_API_KEY` or `~/.config/tinyfish/api-key`) |
 
-### `technical` — adds platform & vendor skills (46 total)
+### `technical` — adds platform & vendor skills (47 total)
 
 Everything in `user`, plus skills that assume provider accounts, CLIs, or
 paid APIs:
@@ -67,9 +68,13 @@ After installing, restart your agent session so the skills register.
 | `mvanhorn/last30days-skill` | `last30days` | upstream license |
 | `kunchenguid/no-mistakes` | `no-mistakes` | MIT |
 | `agent0ai/dox` | `dox` | MIT |
-| **bundled in this repo** | `debug-deep`, `error-finder`, `security-and-hardening`, `ux-purpose-audit`, `micro-interactions`, `autoimprove`, `design-direction-questionnaire`, `website-copy`, `dataforseo`, `dox` | see each folder |
+| **bundled in this repo** | `debug-deep`, `error-finder`, `security-and-hardening`, `ux-purpose-audit`, `micro-interactions`, `autoimprove`, `design-direction-questionnaire`, `website-copy`, `dataforseo`, `dox`, `tinyfish` | see each folder |
 
 All upstream pins are commit SHAs in `install.sh`. Bump them deliberately.
+
+## Bundled MCP servers
+
+`install.sh` also installs `mcp/tinyfish/tinyfish-api-header` to `~/.local/bin` (override with `BIN_DIR`). The server itself is registered by adding `mcp/tinyfish/mcp-snippet.json` to your agent's MCP config — the `tinyfish` skill carries exact per-harness instructions. The API key is never stored in this repo; the helper reads `TINYFISH_API_KEY` or `~/.config/tinyfish/api-key`.
 
 ## Re-running
 
