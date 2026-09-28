@@ -14,7 +14,7 @@ cd bootstrap
 
 ## Profiles
 
-### `user` — everyday coding partner (35 skills)
+### `user` — everyday coding partner (36 skills)
 
 The general-purpose set. Debugging, security review, UI/UX quality gates,
 and ruthless-scope discipline. No vendor credentials required.
@@ -28,7 +28,7 @@ and ruthless-scope discipline. No vendor credentials required.
 | **Workflow** | `autoimprove`, `dox` (self-documenting AGENTS.md framework — copy `AGENTS.dox.md` into a project root as `AGENTS.md`) |
 | **MCP** | `tinyfish` — installs `tinyfish-api-header` to `~/.local/bin` + the skill with the MCP config snippet; needs a TinyFish API key (`TINYFISH_API_KEY` or `~/.config/tinyfish/api-key`) |
 
-### `technical` — adds platform & vendor skills (47 total)
+### `technical` — adds platform & vendor skills (48 total)
 
 Everything in `user`, plus skills that assume provider accounts, CLIs, or
 paid APIs:
