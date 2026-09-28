@@ -1,0 +1,4 @@
+interface:
+  display_name: "DataForSEO"
+  short_description: "Use DataForSEO APIs for SEO research"
+  default_prompt: "Use DataForSEO OpenAPI specifications to plan or execute an SEO research request."
