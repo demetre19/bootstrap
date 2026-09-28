@@ -108,6 +108,7 @@ install_skills "$PROFILE" \
   "user|micro-interactions|local|.|" \
   "user|autoimprove|local|.|" \
   "user|website-copy|local|.|" \
+  "user|dox|local|.|" \
   "user|security-scan|openai/plugins|plugins/codex-security/skills/security-scan|$OP" \
   "user|security-diff-scan|openai/plugins|plugins/codex-security/skills/security-diff-scan|$OP" \
   "user|deep-security-scan|openai/plugins|plugins/codex-security/skills/deep-security-scan|$OP" \

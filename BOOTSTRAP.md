@@ -14,7 +14,7 @@ cd bootstrap
 
 ## Profiles
 
-### `user` — everyday coding partner (33 skills)
+### `user` — everyday coding partner (34 skills)
 
 The general-purpose set. Debugging, security review, UI/UX quality gates,
 and ruthless-scope discipline. No vendor credentials required.
@@ -25,9 +25,9 @@ and ruthless-scope discipline. No vendor credentials required.
 | **Security** | `security-scan`, `security-diff-scan`, `deep-security-scan`, `security-and-hardening`, `propose-security-hardening`, `attack-path-analysis`, `threat-model`, `finding-discovery`, `triage-finding`, `fix-finding`, `track-findings`, `validation` |
 | **Ponytail** (scope discipline) | `ponytail`, `ponytail-review`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help` |
 | **UI/UX** | `impeccable`, `ux-auditor`, `ux-intent-discovery`, `ux-purpose-audit`, `design-system`, `design-direction-questionnaire`, `information-hierarchy`, `form-ux`, `feedback-and-affordance`, `state-completeness`, `micro-interactions`, `visual-character`, `website-copy` |
-| **Workflow** | `autoimprove` |
+| **Workflow** | `autoimprove`, `dox` (self-documenting AGENTS.md framework — copy `AGENTS.dox.md` into a project root as `AGENTS.md`) |
 
-### `technical` — adds platform & vendor skills (45 total)
+### `technical` — adds platform & vendor skills (46 total)
 
 Everything in `user`, plus skills that assume provider accounts, CLIs, or
 paid APIs:
@@ -66,7 +66,8 @@ After installing, restart your agent session so the skills register.
 | `pbakaus/impeccable` | `impeccable` | upstream license |
 | `mvanhorn/last30days-skill` | `last30days` | upstream license |
 | `kunchenguid/no-mistakes` | `no-mistakes` | MIT |
-| **bundled in this repo** | `debug-deep`, `error-finder`, `security-and-hardening`, `ux-purpose-audit`, `micro-interactions`, `autoimprove`, `design-direction-questionnaire`, `website-copy`, `dataforseo` | see each folder |
+| `agent0ai/dox` | `dox` | MIT |
+| **bundled in this repo** | `debug-deep`, `error-finder`, `security-and-hardening`, `ux-purpose-audit`, `micro-interactions`, `autoimprove`, `design-direction-questionnaire`, `website-copy`, `dataforseo`, `dox` | see each folder |
 
 All upstream pins are commit SHAs in `install.sh`. Bump them deliberately.
 

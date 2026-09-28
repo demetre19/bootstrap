@@ -15,9 +15,9 @@ cd bootstrap
 Two profiles:
 
 - **`user`** — debugging, security scans, UI/UX quality, ponytail scope
-  discipline. 33 skills, no credentials needed.
+  discipline. 34 skills, no credentials needed.
 - **`technical`** — everything in `user` plus Cloudflare, Supabase, GitHub
-  workflow, DataForSEO, and `last30days`. 45 skills.
+  workflow, DataForSEO, and `last30days`. 46 skills.
 
 Details, source table, and install-directory detection order are in
 [BOOTSTRAP.md](BOOTSTRAP.md).
